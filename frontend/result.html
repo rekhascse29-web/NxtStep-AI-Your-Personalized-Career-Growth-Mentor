@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Career Report</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+background:#f4f7fc;
+padding:40px;
+}
+
+.container{
+
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+h1{
+
+color:#2563eb;
+margin-bottom:25px;
+}
+
+#loading{
+
+text-align:center;
+padding:80px 20px;
+
+}
+
+.loader{
+
+width:60px;
+height:60px;
+border:6px solid #ddd;
+border-top:6px solid #2563eb;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin:auto;
+
+}
+
+@keyframes spin{
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+#loading h2{
+
+margin-top:25px;
+color:#2563eb;
+
+}
+
+#report{
+
+display:none;
+line-height:1.9;
+font-size:17px;
+white-space:pre-wrap;
+
+}
+
+button{
+
+margin-top:30px;
+padding:12px 30px;
+border:none;
+background:#2563eb;
+color:white;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+
+}
+
+button:hover{
+
+background:#1d4ed8;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>🤖 AI Career Report</h1>
+
+<div id="loading">
+
+<div class="loader"></div>
+
+<h2>Generating your personalized career report...</h2>
+
+</div>
+
+<div id="report"></div>
+
+<button onclick="window.location.href='/assessment'">
+Retake Assessment
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+window.onload=function(){
+
+const report = localStorage.getItem("aiReport");
+
+document.getElementById("report").innerHTML = report;
+const loading=document.getElementById("loading");
+
+const reportDiv=document.getElementById("report");
+
+if(report && report!="undefined" && report!="null"){
+
+loading.style.display="none";
+
+reportDiv.style.display="block";
+
+reportDiv.innerHTML=report;
+
+}else{
+
+loading.innerHTML=`
+<h2 style="color:red;">No Report Found</h2>
+<p>Please complete the assessment first.</p>
+`;
+
+}
+
+};
+
+</script>
+
+</body>
+</html>

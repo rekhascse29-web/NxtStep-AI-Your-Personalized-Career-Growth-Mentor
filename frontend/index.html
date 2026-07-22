@@ -1,9 +1,248 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>NxtStep AI</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NxtStep AI · Career Mentor</title>
+  <!-- Google Font: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
+  <!-- ========== STICKY NAVIGATION ========== -->
+  <nav id="navbar">
+    <div class="container nav-container">
+      <div class="logo">NxtStep <span>AI</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-sparkles"></i> Find Your Dream Career with AI
+        </div>
+        <h1>🚀 AI Powered Career Mentor</h1>
+        <p class="hero-sub">
+          Get personalized career guidance,
+skill gap analysis,
+roadmap,
+internships,
+resume tips,
+and interview preparation—
+all powered by AI.
+        </p>
+        <div class="hero-buttons">
+          <a href="/assessment" class="btn-primary">Start Assessment</a>
+          <a href="#features" class="btn-outline">Explore Features</a>
+        </div>
+      </div>
+    </section>
+      
+      <!-- Dashboard Preview Card -->
+      
+  <!-- ========== STATISTICS SECTION ========== -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">1000+</span>
+        <span class="stat-label">✔ AI Skill Analysis</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">✔ Career Matching</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">95%</span>
+        <span class="stat-label">✔ Learning Roadmaps</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">24/7</span>
+        <span class="stat-label">✔ Resume Support</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES SECTION ========== -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Designed for your <span>career growth</span></h2>
+      <p class="section-sub">Everything you need to navigate your professional journey with confidence.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-brain"></i></div>
+          <h3>AI Skill Analysis</h3>
+          <p>Deep evaluation of your abilities to identify strengths and growth areas.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-compass"></i></div>
+          <h3>Opportunity Finder</h3>
+          <p>Discover internships, hackathons, and courses that match your profile.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-map-signs"></i></div>
+          <h3>Career Roadmap Generator</h3>
+          <p>Step-by-step personalized plan to reach your dream career.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Growth Tracking</h3>
+          <p>Monitor your progress and stay motivated with real-time insights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section id="how-it-works" class="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How it <span>works</span></h2>
+      <p class="section-sub">Five simple steps to unlock your career potential.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h4>Fill Assessment</h4>
+          <p>Tell us about your skills, interests, and goals.</p>
+        </div>
+        <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <h4>AI Analyzes Skills</h4>
+          <p>Our AI evaluates your strengths and gaps.</p>
+        </div>
+        <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <h4>Find Skill Gaps</h4>
+          <p>Discover the skills you need to achieve your dream career.</p>
+        </div>
+        <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+        <div class="step">
+
+          <div class="step-number">04</div>
+          <h4>Generate Roadmap</h4>
+          <p>Receive a tailored plan with clear milestones.</p>
+        </div>
+        <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+        <div class="step">
+          <div class="step-number">05</div>
+          <h4>Career Report</h4>
+          <p>Follow your roadmap and track your growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+<section id="about" class="about">
+  <div class="container about-grid">
+
+    <!-- Left Side -->
+    <div class="about-text">
+      <h2><i class="fas fa-info-circle"></i> About NxtStep AI</h2>
+
+      <div class="about-card">
+        <h3><i class="fas fa-triangle-exclamation"></i> Problem</h3>
+        <p>Students often struggle to:</p>
+
+        <ul class="about-list">
+          <li>Identify their skill gaps</li>
+          <li>Choose the right career path</li>
+          <li>Know where to start learning</li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <h3><i class="fas fa-lightbulb"></i> Solution</h3>
+
+        <p>
+          NxtStep AI analyzes your profile, detects skill gaps,
+          recommends career paths, and generates a personalized
+          learning roadmap to help you achieve your dream career.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Right Side -->
+    <div class="about-image">
+      <i class="fas fa-robot"></i>
+      <h3>AI Career Mentor</h3>
+      <p>Smart guidance for every student.</p>
+    </div>
+
+  </div>
+</section>
+  <!-- ========== CALL TO ACTION ========== -->
+<!-- ========== CALL TO ACTION ========== -->
+<section id="cta" class="cta">
+  <div class="container cta-box">
+
+    <h2>Ready to Build Your Dream Career?</h2>
+
+    <p>
+      Take a 2-minute AI assessment and receive your personalized career report instantly.
+    </p>
+
+    <a href="/assessment" class="btn-primary btn-large">
+      <i class="fas fa-arrow-right"></i> Start Free Assessment
+    </a>
+
+  </div>
+</section>
+  <!-- ========== FOOTER ========== -->
+  <footer id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo">NxtStep <span>AI</span></div>
+        <p>AI-powered career mentor</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> hello@nxtstep.ai</p>
+        <p><i class="fas fa-map-marker-alt"></i> San Francisco, CA</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 NxtStep AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

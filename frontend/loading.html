@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NxtStep AI • Generating Report</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:#f7f9fc;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+min-height:100vh;
+
+padding:20px;
+
+}
+
+.card{
+
+width:100%;
+
+max-width:780px;
+
+background:white;
+
+border-radius:35px;
+
+padding:45px;
+
+box-shadow:0 15px 50px rgba(0,0,0,.08);
+
+text-align:center;
+
+}
+
+.brain{
+
+width:120px;
+
+height:120px;
+
+margin:auto;
+
+border-radius:50%;
+
+background:#eef5ff;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+}
+
+.brain i{
+
+font-size:60px;
+
+color:#2563eb;
+
+animation:pulse 1.8s infinite;
+
+}
+
+.ring{
+
+position:absolute;
+
+width:145px;
+
+height:145px;
+
+border-radius:50%;
+
+border:5px solid #dbeafe;
+
+border-top:5px solid #2563eb;
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.15);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+h1{
+
+margin-top:30px;
+
+font-size:34px;
+
+color:#1e293b;
+
+}
+
+.subtitle{
+
+margin-top:10px;
+
+font-size:17px;
+
+color:#64748b;
+
+line-height:1.8;
+
+}
+
+.progress{
+
+margin-top:40px;
+
+background:#edf2f7;
+
+height:10px;
+
+border-radius:30px;
+
+overflow:hidden;
+
+}
+
+.progress-bar{
+
+height:100%;
+
+width:0%;
+
+background:#2563eb;
+
+transition:.3s;
+
+}
+
+.percent{
+
+text-align:right;
+
+margin-top:8px;
+
+font-weight:600;
+
+color:#2563eb;
+
+}
+
+.steps{
+
+margin-top:35px;
+
+text-align:left;
+
+background:#f8fafc;
+
+padding:20px;
+
+border-radius:20px;
+
+}
+
+.step{
+
+padding:12px;
+
+color:#94a3b8;
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+.step.active{
+
+color:#2563eb;
+
+font-weight:600;
+
+transform:translateX(8px);
+
+}
+
+.step i{
+
+margin-right:10px;
+
+}
+
+.insight{
+
+margin-top:35px;
+
+background:#eff6ff;
+
+padding:20px;
+
+border-radius:20px;
+
+display:flex;
+
+gap:15px;
+
+align-items:center;
+
+}
+
+.insight i{
+
+font-size:30px;
+
+color:#2563eb;
+
+}
+
+.insight p{
+
+font-size:16px;
+
+color:#334155;
+
+}
+
+.footer{
+
+margin-top:30px;
+
+display:inline-flex;
+
+gap:10px;
+
+padding:14px 22px;
+
+background:#f8fafc;
+
+border-radius:50px;
+
+color:#475569;
+
+font-size:14px;
+
+}
+
+.footer i{
+
+color:#2563eb;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="brain">
+
+<div class="ring"></div>
+
+<i class="fas fa-brain"></i>
+
+</div>
+
+<h1>Generating Your Career Report</h1>
+
+<p class="subtitle">
+
+NxtStep AI is analyzing your profile and preparing your personalized career roadmap.
+
+</p>
+
+<div class="progress">
+
+<div class="progress-bar" id="bar"></div>
+
+</div>
+
+<div class="percent" id="percent">
+
+0%
+
+</div>
+
+<div class="steps">
+
+<div class="step active">
+
+<i class="fas fa-user"></i>
+
+Reading your profile...
+
+</div>
+
+<div class="step">
+
+<i class="fas fa-code"></i>
+
+Analyzing technical skills...
+
+</div>
+
+<div class="step">
+
+<i class="fas fa-chart-line"></i>
+
+Finding skill gaps...
+
+</div>
+
+<div class="step">
+
+<i class="fas fa-lightbulb"></i>
+
+Matching career paths...
+
+</div>
+
+<div class="step">
+
+<i class="fas fa-award"></i>
+
+Preparing AI report...
+
+</div>
+
+</div>
+
+<div class="insight">
+
+<i class="fas fa-lightbulb"></i>
+
+<p id="tip">
+
+Analyzing your strengths...
+
+</p>
+
+</div>
+
+<div class="footer">
+
+<i class="fas fa-circle-notch fa-spin"></i>
+
+Please don't close this page
+
+</div>
+
+</div>
+<script>
+
+// ----------------------
+// Get form data
+// ----------------------
+const userData = JSON.parse(localStorage.getItem("assessmentData"));
+
+if(!userData){
+    alert("Assessment data not found.");
+    window.location.href="/assessment";
+}
+
+// ----------------------
+// UI Elements
+// ----------------------
+
+const progressBar=document.getElementById("bar");
+const percent=document.getElementById("percent");
+
+const steps=document.querySelectorAll(".step");
+
+const tip=document.getElementById("tip");
+
+const tips=[
+
+"Analyzing your strengths...",
+
+"Comparing with industry trends...",
+
+"Finding best career roles...",
+
+"Preparing roadmap...",
+
+"Almost done..."
+
+];
+
+let tipIndex=0;
+
+setInterval(()=>{
+
+tip.innerText=tips[tipIndex];
+
+tipIndex++;
+
+if(tipIndex>=tips.length){
+
+tipIndex=0;
+
+}
+
+},2000);
+
+
+// ----------------------
+// Progress Animation
+// ----------------------
+
+let progress=0;
+
+let currentStep=0;
+
+const loader=setInterval(()=>{
+
+progress++;
+
+progressBar.style.width=progress+"%";
+
+percent.innerText=progress+"%";
+
+if(progress%20===0){
+
+steps.forEach(s=>s.classList.remove("active"));
+
+if(currentStep<steps.length){
+
+steps[currentStep].classList.add("active");
+
+currentStep++;
+
+}
+
+}
+
+if(progress>=95){
+
+clearInterval(loader);
+
+}
+
+},80);
+
+
+// ----------------------
+// Call Flask API
+// ----------------------
+
+fetch("/analyze", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(userData)
+})
+.then(res => res.json())
+.then(data => {
+
+    if (data.success) {
+
+        localStorage.setItem("aiReport", data.response);
+
+        progressBar.style.width = "100%";
+        percent.innerText = "100%";
+
+        steps.forEach(s => s.classList.remove("active"));
+        steps[steps.length - 1].classList.add("active");
+
+        setTimeout(()=>{
+            window.location.href="/result";
+        },3000);
+
+    } 
+    else {
+
+        alert(data.error);
+
+    }
+
+})
+.catch(err => {
+
+    console.log(err);
+
+    alert("Server Error");
+
+});
+</script>
+
+</body>
+</html>
